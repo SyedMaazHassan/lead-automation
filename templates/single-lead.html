@@ -1,0 +1,595 @@
+{% extends 'inc/base.inc.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+
+{% block custom_css %}
+
+<style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    ::-webkit-scrollbar-track {
+        display: none;
+    }
+
+    .text-small {
+        font-size: 1rem;
+    }
+
+    .messages-box,
+    .chat-box {
+        height: 75vh;
+        position: relative;
+        overflow-y: scroll;
+    }
+
+    input::placeholder {
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+{% endblock custom_css %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-3 text-center">
+        <div class="card shadow">
+          <div class="card-body">   
+            <div>
+                <div class="text-left">
+                    <span class="badge badge-pill badge-success">Email sent</span>
+                </div>
+                <img src="{% static 'theme/img/User-Profile-Transparent.png' %}"
+                class="mt-4 w-50 img-fluid mx-auto"
+                style="border-radius: 100px;"
+                alt="">
+                <div class="text-left mt-4 px-2">
+                    <div class="form-group mb-4">
+                      <label for=""><b>Name</b></label>
+                      <p>Syed Maaz Hassan</p>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for=""><b>Email</b></label>
+                        <p>syedmaaz@gmail.com</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for=""><b>Phone</b></label>
+                        <p>+923245233106</p>
+                    </div>
+
+             
+                    <!-- <hr> -->
+                    <!-- <a href="writewithAl.html" class="text-dark">Write with AI</a><br>
+                    <a href="singleleadpage.html" class="text-dark">Email History</a><br>
+                    <a href="" data-toggle="modal" data-target="#exampleModal" class="text-dark">Edit Lead
+                        profile</a><br>
+                    <a href="" class="text-dark" data-toggle="modal" data-target="#updatestatusModal">Update
+                        Status</a><br> -->
+
+
+                </div>
+
+            </div>
+      
+          </div>
+        </div>
+
+     
+    </div>
+    <div class="col-sm-9">
+        <div class="card text-left shadow">
+          <div class="card-header">
+            <nav class="navbar py-0 navbar-expand-lg navbar-light bg-light px-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active mr-3">
+                        <a class="nav-link section-link" data-target="inbox" href="#">Inbox</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                      <a class="nav-link section-link"  data-target="email-sent"  href="#">Email sent</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link section-link" data-target="write-with-ai" href="#">Write with AI</a>
+                    </li>  
+                    <li class="nav-item mr-3">
+                      <a class="nav-link section-link" data-target="edit-profile" href="#">Edit Profile</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link section-link" data-target="update-status" href="#">Update Status</a>
+                    </li>
+                  </ul>
+                  <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form> -->
+                </div>
+              </nav>
+          </div>
+          <div class="card-body">
+
+            <div class="sections" id="inbox">
+                <ul class="list-group">
+                    <!-- Record 1 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          5 days ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Exploring Partnership Opportunities</b>
+                            <span class="badge badge-pill badge-warning mb-2">New</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 2 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          3 days ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Follow-up on Product Demonstration</b>
+                            <span class="badge badge-pill badge-success mb-2">Read</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 3 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          2 days ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Discussion about Customized Solutions</b>
+                            <span class="badge badge-pill badge-danger mb-2">Urgent</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 4 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          1 day ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Inquiry Regarding Pricing Plans</b>
+                            <span class="badge badge-pill badge-warning mb-2">New</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 5 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          6 days ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Proposal Submission for Project Collaboration</b>
+                            <span class="badge badge-pill badge-success mb-2">Read</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 6 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          4 days ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Follow-up on Initial Discussion</b>
+                            <span class="badge badge-pill badge-danger mb-2">Urgent</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 7 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          3 days ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Product Inquiry for Upcoming Project</b>
+                            <span class="badge badge-pill badge-warning mb-2">New</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 8 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          2 days ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Request for Demo Appointment</b>
+                            <span class="badge badge-pill badge-success mb-2">Read</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 9 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          1 day ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Follow-up on Recent Webinar</b>
+                            <span class="badge badge-pill badge-danger mb-2">Urgent</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                
+                    <!-- Record 10 -->
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          5 days ago
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <b>Collaboration Proposal for Joint Venture</b>
+                            <span class="badge badge-pill badge-warning mb-2">New</span>
+                          </div>
+                        </div>   
+                      </div>
+                    </li>
+                  </ul>
+
+            </div>
+
+            <div class="sections hidden" id="email-sent">
+                <div class="table-responsive">
+                    <table class="table border table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Sent at</th>
+                                <th>Sent by</th>
+                                <th>Template</th>
+                                <th>Resends</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>5 days ago</td>
+                                <td>Ahmed Shah</td>
+                                <td>Product Inquiry</td>
+                                <td>2</td>
+                                <td>
+                                    <i class="fas fa-trash text-danger"></i>
+                                    <i class="fa fa-send-o text-success mx-2"></i>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>7 days ago</td>
+                                <td>Mr. Rose (Admin)</td>
+                                <td>Services Introduction</td>
+                                <td>1</td>
+                                <td>
+                                    <i class="fas fa-trash text-danger"></i>
+                                    <i class="fa fa-send-o text-success mx-2"></i>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>8 days ago</td>
+                                <td>Mr. Rose (Admin)</td>
+                                <td>Follow-up about the video call demonstration</td>
+                                <td>0</td>
+                                <td>
+                                    <i class="fas fa-trash text-danger"></i>
+                                    <i class="fa fa-send-o text-success mx-2"></i>
+                                </td>
+                            </tr>
+                         
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="sections hidden" id="write-with-ai">
+                <div class="container" style="width: 100%;">
+                    <div class="py-5 chat-box" style="border-radius: 10px 10px 0 0;">
+                        <div class="media w-50 mb-3">
+                            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user"
+                                width="50" class="rounded-circle">
+                            <div class="media-body ml-3">
+                                <div class="bg-light rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-muted">Test which is a new approach all
+                                        solutions
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+
+                        <!-- Reciever Message-->
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg- primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 mb-3">
+                            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user"
+                                width="50" class="rounded-circle">
+                            <div class="media-body ml-3">
+                                <div class="bg-light rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-muted">Test which is a new approach all
+                                        solutions
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+
+                        <!-- Reciever Message-->
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg-primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg- primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 mb-3">
+                            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user"
+                                width="50" class="rounded-circle">
+                            <div class="media-body ml-3">
+                                <div class="bg-light rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-muted">Test which is a new approach all
+                                        solutions
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+
+                        <!-- Reciever Message-->
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg-primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg- primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 mb-3">
+                            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user"
+                                width="50" class="rounded-circle">
+                            <div class="media-body ml-3">
+                                <div class="bg-light rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-muted">Test which is a new approach all
+                                        solutions
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+
+                        <!-- Reciever Message-->
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg-primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg- primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 mb-3">
+                            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user"
+                                width="50" class="rounded-circle">
+                            <div class="media-body ml-3">
+                                <div class="bg-light rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-muted">Test which is a new approach all
+                                        solutions
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+
+                        <!-- Reciever Message-->
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg-primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg- primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+                        <div class="media w-50 mb-3">
+                            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user"
+                                width="50" class="rounded-circle">
+                            <div class="media-body ml-3">
+                                <div class="bg-light rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-muted">Test which is a new approach all
+                                        solutions
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+
+                        <!-- Reciever Message-->
+                        <div class="media w-50 ml-auto mb-3">
+                            <div class="media-body">
+                                <div class="bg-primary rounded py-2 px-3 mb-2">
+                                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                    </p>
+                                </div>
+                                <p class="small text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                        </div>
+
+                        <!-- ... (Other messages) -->
+
+                        <!-- Form container at the bottom -->
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="p-4 form-control" placeholder="Type here message..."
+                            aria-label="Recipient's username" aria-describedby="button-addon2"
+                            style="border-radius: 0px 0px 0px 10px;">
+                        <div class="input-group-append" style="border-radius: 0px 0px 0px 10px;">
+                            <button class="btn btn-outline-light border" type="button" id="button-addon2"
+                                style="border-radius: 0px 0px 10px 0px;"><span
+                                    class="material-symbols-outlined text-dark">
+                                    ios_share
+                                </span></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="sections hidden" id="edit-profile">
+                <div>
+                    <label for="basic-url">Name</label>
+                    <div class="input-group mb-3">
+                        <input value="Syed Maaz Hassan" type="text" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3">
+                    </div>
+                    <label for="basic-url">Email</label>
+                    <div class="input-group mb-3">
+                        <input value="syedmaaz@gmail.com" type="email" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="basic-url">Phone</label>
+                            <div class="input-group mb-3">
+                                <input value="+923472533106" type="text" class="form-control" id="basic-url"
+                                    aria-describedby="basic-addon3">
+                            </div>
+                        </div>
+                     
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Background</label>
+                      <textarea class="form-control" name="" id="" rows="6">Syed Maaz Hassan is the key decision-maker at XYZ Innovations, a forward-thinking technology company specializing in custom software solutions. With a strong presence in the global market, XYZ Innovations focuses on delivering innovative products tailored to the needs of mid-sized enterprises and large corporations. As the CEO, Syed Maaz Hassan is dedicated to fostering strategic partnerships and driving the company's commitment to technological excellence and client satisfaction.</textarea>
+                    </div>
+
+                    <div>
+                        <button type="button" name="" id="" class="btn btn-primary">Save Lead Info</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+           
+          </div>
+        </div>
+  
+    </div>
+
+</div>
+
+
+{% endblock content %}
+
+
+
+{% block custom_js %}
+<script>
+    $(document).ready(function () {
+      $('.section-link').on('click', function (e) {
+        e.preventDefault();
+
+        // Hide all divs
+        $('.sections').addClass('hidden');
+
+        // Show the selected div
+        var targetDivId = $(this).data('target');
+        $('#' + targetDivId).removeClass('hidden');
+        $(".section-link").parent().removeClass("active");
+        $(this).parent().addClass("active");
+      });
+    });
+</script>
+{% endblock custom_js %}

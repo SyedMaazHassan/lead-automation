@@ -1,0 +1,255 @@
+{% extends 'inc/base.inc.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+
+<div>
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Leads</h1>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <i class="fas fa-plus fa-sm text-white-50"></i> Create Lead
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create Lead</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="basic-url">First Name</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="basic-url"
+                                        aria-describedby="basic-addon3">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="basic-url">Last Name</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="basic-url"
+                                        aria-describedby="basic-addon3">
+                                </div>
+                            </div>
+                        </div>
+                        <label for="basic-url">E-mail Address</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="basic-url"
+                                aria-describedby="basic-addon3">
+                        </div>
+                        <label for="basic-url">Phone number</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="basic-url"
+                                aria-describedby="basic-addon3">
+                        </div>
+                        <label for="basic-url">Background</label>
+                        <div class="input-group mb-3">
+                            <textarea class="form-control""></textarea>
+
+                        </div>
+
+                    </div>
+                    <div class=" modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+     
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover border" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                            <th>Created at</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>da8dsa80</td>
+                            <td>Tiger Nixon</td>
+                            <td>tigernixon@gmail.com</td>
+                            <td>+92 3472533106</td>
+                            <td>
+                                <span class="badge badge-pill badge-success">Email sent</span>
+                            </td>
+                            <td>2 Apr. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1a2b3c4d</td>
+                            <td>John Doe</td>
+                            <td>johndoe@example.com</td>
+                            <td>+1 555-1234</td>
+                            <td>
+                                <span class="badge badge-pill badge-success">Email sent</span>
+                            </td>
+                            <td>5 Jan. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5e6f7g8h</td>
+                            <td>Jane Smith</td>
+                            <td>janesmith@gmail.com</td>
+                            <td>+44 20 1234 5678</td>
+                            <td>
+                                <span class="badge badge-pill badge-success">Email sent</span>
+                            </td>
+                            <td>12 Feb. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9i0j1k2l</td>
+                            <td>Robert Johnson</td>
+                            <td>robert.j@example.com</td>
+                            <td>+1 987-6543</td>
+                            <td>
+                                <span class="badge badge-pill badge-warning">Lead Responded</span>
+                            </td>
+                            <td>20 Mar. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3m4n5o6p</td>
+                            <td>Emily Davis</td>
+                            <td>emily.d@example.com</td>
+                            <td>+91 98765 43210</td>
+                            <td>
+                                <span class="badge badge-pill badge-danger">Closed - Lost</span>
+                            </td>
+                            <td>3 Apr. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7q8r9s0t</td>
+                            <td>Michael Brown</td>
+                            <td>michaelb@example.com</td>
+                            <td>+33 6 12 34 56 78</td>
+                            <td>
+                                <span class="badge badge-pill badge-success">Email sent</span>
+                            </td>
+                            <td>15 Apr. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1u2v3w4x</td>
+                            <td>Alice Johnson</td>
+                            <td>alice.j@example.com</td>
+                            <td>+61 2 3456 7890</td>
+                            <td>
+                                <span class="badge badge-pill badge-info">Nurturing Email Sent</span>
+                            </td>
+                            <td>22 Apr. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5y6z7a8b</td>
+                            <td>Charles White</td>
+                            <td>charlesw@example.com</td>
+                            <td>+49 30 1234 5678</td>
+                            <td>
+                                <span class="badge badge-pill badge-success">Email sent</span>
+                            </td>
+                            <td>8 May 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9c0d1e2f</td>
+                            <td>Sarah Miller</td>
+                            <td>sarah.m@example.com</td>
+                            <td>+27 11 123 4567</td>
+                            <td>
+                                <span class="badge badge-pill badge-success">Email sent</span>
+                            </td>
+                            <td>16 May 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3g4h5i6j</td>
+                            <td>Daniel Wilson</td>
+                            <td>danielw@example.com</td>
+                            <td>+81 3 1234 5678</td>
+                            <td>
+                                <span class="badge badge-pill badge-info">Nurturing Email Sent</span>
+                            </td>
+                            <td>2 Jun. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7k8l9m0n</td>
+                            <td>Olivia Taylor</td>
+                            <td>oliviat@example.com</td>
+                            <td>+61 3 9876 5432</td>
+                            <td>
+                                <span class="badge badge-pill badge-success">Email sent</span>
+                            </td>
+                            <td>12 Jun. 2023</td>
+                            <td>
+                                <i class="fas fa-edit mx-1 text-primary"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                            </td>
+                        </tr>
+                        <!-- Add 6 more records as needed -->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+

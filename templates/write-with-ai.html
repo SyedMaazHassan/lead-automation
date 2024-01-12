@@ -1,0 +1,243 @@
+{% extends 'inc/base.inc.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+
+{% block custom_css %}
+
+<style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    ::-webkit-scrollbar-track {
+        display: none;
+    }
+
+    .text-small {
+        font-size: 1rem;
+    }
+
+    .messages-box,
+    .chat-box {
+        height: 75vh;
+        position: relative;
+        overflow-y: scroll;
+    }
+
+    input::placeholder {
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+{% endblock custom_css %}
+
+{% block content %}
+
+<div class="container" style="width: 100%;">
+    <h1 class="my-4">Write with AI</h1>
+    <div class="px-4 py-5 chat-box bg-white border" style="border-radius: 10px 10px 0 0;">
+        <div class="media w-75 mb-3">
+            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user" width="50"
+                class="rounded-circle">
+            <div class="media-body ml-3">
+                <div class="bg-light rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-muted">Test which is a new approach all solutions
+                    </p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+
+        <!-- Reciever Message-->
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg- primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 mb-3">
+            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user" width="50"
+                class="rounded-circle">
+            <div class="media-body ml-3">
+                <div class="bg-light rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-muted">Test which is a new approach all solutions
+                    </p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+
+        <!-- Reciever Message-->
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg-primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg- primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 mb-3">
+            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user" width="50"
+                class="rounded-circle">
+            <div class="media-body ml-3">
+                <div class="bg-light rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-muted">Test which is a new approach all solutions
+                    </p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+
+        <!-- Reciever Message-->
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg-primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg- primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 mb-3">
+            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user" width="50"
+                class="rounded-circle">
+            <div class="media-body ml-3">
+                <div class="bg-light rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-muted">Test which is a new approach all solutions
+                    </p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+
+        <!-- Reciever Message-->
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg-primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg- primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 mb-3">
+            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user" width="50"
+                class="rounded-circle">
+            <div class="media-body ml-3">
+                <div class="bg-light rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-muted">Test which is a new approach all solutions
+                    </p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+
+        <!-- Reciever Message-->
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg-primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg- primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+        <div class="media w-75 mb-3">
+            <img src="{% static 'theme/img/chatbot.jpg' %}" alt="user" width="50"
+                class="rounded-circle">
+            <div class="media-body ml-3">
+                <div class="bg-light rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-muted">Test which is a new approach all solutions
+                    </p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+
+        <!-- Reciever Message-->
+        <div class="media w-75 ml-auto mb-3">
+            <div class="media-body">
+                <div class="bg-primary rounded py-2 px-3 mb-2">
+                    <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+                </div>
+                <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+        </div>
+
+        <!-- ... (Other messages) -->
+
+        <!-- Form container at the bottom -->
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" class="p-4 form-control" placeholder="Type here message..."
+            aria-label="Recipient's username" aria-describedby="button-addon2"
+            style="border-radius: 0px 0px 0px 10px;">
+        <div class="input-group-append" style="border-radius: 0px 0px 0px 10px;">
+            <button class="btn btn-outline-light border" type="button" id="button-addon2"
+                style="border-radius: 0px 0px 10px 0px;"><span
+                    class="material-symbols-outlined text-dark">
+                    ios_share
+                </span></button>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+
+
+{% block custom_js %}
+<script>
+    $(document).ready(function () {
+      $('.section-link').on('click', function (e) {
+        e.preventDefault();
+
+        // Hide all divs
+        $('.sections').addClass('hidden');
+
+        // Show the selected div
+        var targetDivId = $(this).data('target');
+        $('#' + targetDivId).removeClass('hidden');
+        $(".section-link").parent().removeClass("active");
+        $(this).parent().addClass("active");
+      });
+    });
+</script>
+{% endblock custom_js %}

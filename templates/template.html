@@ -1,0 +1,219 @@
+{% extends 'inc/base.inc.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+<div>
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Eamil Templates</h1>
+        <!-- Button trigger modal -->
+        <a type="button" class="btn btn-primary" href="{% url 'create-template' %}">
+            <i class="fas fa-plus fa-sm text-white-50 mx-1"></i> Create New Template
+        </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create Lead</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="basic-url">Name</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="basic-url"
+                                aria-describedby="basic-addon3">
+                        </div>
+                        <label for="basic-url">Subject</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="basic-url"
+                                aria-describedby="basic-addon3">
+                        </div>
+                        <label for="basic-url">Body</label>
+                        <div class="input-group mb-3">
+                            <textarea class="form-control""></textarea>
+
+                        </div>
+
+                    </div>
+                    <div class=" modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Email Template List</h6>
+        </div> -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover border" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Used in</th>
+                            <th>Created at</th>
+                            <th>Created by</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr>
+                            <td>as9d08asd</td>
+                            <td>Simple Initial Cold Email</td>
+                            <td>5 emails</td>
+                            <td>Jan 25, 2023 - 2:00 pm</td>
+                            <td>Admin</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1a2b3c4d</td>
+                            <td>Product Announcement</td>
+                            <td>10 emails</td>
+                            <td>March 5, 2024 - 3:30 pm</td>
+                            <td>Admin</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5e6f7g8h</td>
+                            <td>Special Offer</td>
+                            <td>7 emails</td>
+                            <td>April 12, 2024 - 10:45 am</td>
+                            <td>User</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9i0j1k2l</td>
+                            <td>Newsletter</td>
+                            <td>15 emails</td>
+                            <td>June 8, 2024 - 1:15 pm</td>
+                            <td>Admin</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3m4n5o6p</td>
+                            <td>Welcome Email</td>
+                            <td>5 emails</td>
+                            <td>July 20, 2024 - 4:00 pm</td>
+                            <td>User</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7q8r9s0t</td>
+                            <td>Feedback Request</td>
+                            <td>8 emails</td>
+                            <td>August 15, 2024 - 11:30 am</td>
+                            <td>Admin</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1u2v3w4x</td>
+                            <td>Event Invitation</td>
+                            <td>12 emails</td>
+                            <td>September 10, 2024 - 2:45 pm</td>
+                            <td>User</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5y6z7a8b</td>
+                            <td>Holiday Greetings</td>
+                            <td>3 emails</td>
+                            <td>October 5, 2024 - 9:00 am</td>
+                            <td>Admin</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9c0d1e2f</td>
+                            <td>New Feature Announcement</td>
+                            <td>20 emails</td>
+                            <td>November 18, 2024 - 12:00 pm</td>
+                            <td>User</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3g4h5i6j</td>
+                            <td>Survey Request</td>
+                            <td>7 emails</td>
+                            <td>December 7, 2024 - 3:15 pm</td>
+                            <td>Admin</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7k8l9m0n</td>
+                            <td>Account Update</td>
+                            <td>10 emails</td>
+                            <td>January 25, 2025 - 10:30 am</td>
+                            <td>User</td>
+                            <td>
+                                <i class="fa fa-edit text-primary mx-2"></i>
+                                <i class="fas fa-trash text-danger"></i>
+                                <i class="fa fa-send-o text-success mx-2"></i>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+{% endblock content %}
