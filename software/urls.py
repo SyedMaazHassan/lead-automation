@@ -19,6 +19,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('accounts.urls'))
+    path('', include('apps.accounts.urls')),
+    path('', include('apps.email_management.urls'))
 ]
 
+
+admin.site.site_header = 'Prospectr Admin'                    # default: "Django Administration"
+admin.site.index_title = 'Prospectr Admin'                 # default: "Site administration"
+admin.site.site_title = 'Prospectr Admin' # default: "Django site admin"

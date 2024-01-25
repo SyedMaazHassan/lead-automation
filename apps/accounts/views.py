@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-
+from .factories import UserFactory, LeadFactory
 
 def home_view(request):
+    return redirect("write-with-ai")
     return render(request, 'index.html')
 
 def all_templates(request):

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_bootstrap5',
-    'accounts'
+    'apps.accounts',
+    'apps.email_management'
 ]
 
 MIDDLEWARE = [
@@ -147,5 +149,52 @@ BOOTSTRAP5 = {
     "required_css_class": "django_bootstrap5-required",
     "javascript_in_head": True,
     "layout": "floating"
+}
+
+
+
+# Jazzmind setting
+JAZZMIN_SETTINGS = {
+    "site_title": "Prospectr Admin",
+    "site_logo": "prospectr-logo.png",
+    "copyright": "Prospectr Admin",
+    "site_icon": "prospectr-logo.webp",
+    "site_logo_classes": "img-circle",
+}
+
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "journal",
+    "dark_mode_theme": "darkly",
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-dark",
+    "accent": "accent-lightblue",
+    "navbar": "navbar-info navbar-dark",
+    "no_navbar_border": False,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-info",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "default",
+    "dark_mode_theme": None,
+    "button_classes": {
+        "primary": "btn-outline-info",
+        "secondary": "btn-outline-secondary",
+        "info": "btn-outline-info",
+        "warning": "btn-warning",
+        "danger": "btn-outline-danger",
+        "success": "btn-outline-success"
+    },
+    "actions_sticky_top": False
 }
 
